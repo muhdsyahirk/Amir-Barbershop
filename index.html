@@ -24,12 +24,36 @@
   <body>
     <!-- NAV -->
     <nav class="nav">
-      <ul class="nav-menu-ul">
-        <li><a href="#home" class="nav-menu-elem">Amir Barbershop</a></li>
+      <ul class="nav-menu-ul nav-sidebar">
+        <li onclick="hideSidebar()">
+          <a href="#" class="nav-menu-elem"
+            ><i class="fa-solid fa-xmark"></i
+          ></a>
+        </li>
         <li><a href="#pricing" class="nav-menu-elem">Pricing</a></li>
         <li><a href="#location" class="nav-menu-elem">Location</a></li>
         <li><a href="#barber" class="nav-menu-elem">Barber</a></li>
         <li><a href="#gallery" class="nav-menu-elem">Gallery</a></li>
+      </ul>
+      <ul class="nav-menu-ul">
+        <li>
+          <a href="#home" class="nav-menu-elem">Amir Barbershop</a>
+        </li>
+        <li>
+          <a href="#pricing" class="nav-menu-elem nav-hide-mobile">Pricing</a>
+        </li>
+        <li>
+          <a href="#location" class="nav-menu-elem nav-hide-mobile">Location</a>
+        </li>
+        <li>
+          <a href="#barber" class="nav-menu-elem nav-hide-mobile">Barber</a>
+        </li>
+        <li>
+          <a href="#gallery" class="nav-menu-elem nav-hide-mobile">Gallery</a>
+        </li>
+        <li class="nav-show-mobile" onclick="showSidebar()">
+          <a href="#" class="nav-menu-elem"><i class="fa-solid fa-bars"></i></a>
+        </li>
       </ul>
     </nav>
 
@@ -158,42 +182,19 @@
           <p>(on top of 99 Speedmart)</p>
         </div>
         <div class="location-in-map">
-          <iframe
+          <!-- <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.00178021913428!2d101.72109321656723!3d3.0870720495030675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc35003c3d90f5%3A0x1513e509517ec87a!2sAmir%20Barbershop!5e0!3m2!1sen!2smy!4v1765102914973!5m2!1sen!2smy"
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          ></iframe> -->
         </div>
-        <!-- <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.0065871960438!2d101.72062366967832!3d3.0876412389634718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc3593d3a216cd%3A0x9e4f177b193b8d47!2s54%2C%20Jalan%20Jujur%2C%20Bandar%20Tun%20Razak%2C%2056000%20Kuala%20Lumpur%2C%20Wilayah%20Persekutuan%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1740514549458!5m2!1sen!2smy"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-        <div class="location-in-content">
-          <div class="location-in-content-title">
-            <p><span class="title-highlight">LOCATE US AT</span></p>
-          </div>
-          <div class="location-in-content-desc">
-            <div class="location-in-content-desc-empty"></div>
-            <div class="location-in-content-desc-dash"></div>
-            <div class="location-in-content-desc-text">
-              <p>
-                54, Jalan Jujur, Bandar Tun Razak, 56000<br />Kuala Lumpur,
-                Wilayah Persekutuan Kuala Lumpur
-              </p>
-              <p>(on top of Pizza Hut)</p>
-            </div>
-          </div>
-        </div> -->
       </div>
     </section>
 
     <!-- SECTION BARBER -->
-    <section id="barber" class="barber">
+    <!-- <section id="barber" class="barber">
       <div class="barber-container">
         <div class="barber-link">
           <ul>
@@ -227,7 +228,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- SECTION GALLERY -->
     <section id="gallery" class="gallery">
@@ -297,7 +298,7 @@
       <div class="footer-container">
         <p>
           <i class="fa-regular fa-copyright"></i> 2025
-          <span class="text-bold">Amir Barbershop</span>. All Rights Reserved.
+          <span class="text-bold">Amir Barbershop</span>. Some Rights Reserved.
         </p>
         <p>
           Made by

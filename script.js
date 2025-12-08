@@ -14,3 +14,12 @@ window.addEventListener("scroll", () => {
     });
   }
 });
+
+function showSidebar() {
+  const navSidebar = document.querySelector(".nav-sidebar");
+  navSidebar.style.display = "flex";
+}
+function hideSidebar() {
+  const navSidebar = document.querySelector(".nav-sidebar");
+  navSidebar.style.display = "none";
+}
