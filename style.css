@@ -616,7 +616,7 @@ body {
   }
 }
 
-/* ---------- BARBERS ---------- */
+/* ---------- BARBER ---------- */
 .barber {
   min-height: 100vh;
   background-color: #000000;
@@ -651,11 +651,44 @@ body {
       }
     }
   }
+  @media (max-width: 1070px) {
+    .barber-link-hide-mobile {
+      display: none;
+    }
+    .barber-link {
+      /* order: 2; */
+    }
+    .barber-link ul {
+      flex-direction: row;
+      gap: 2.4vw;
+      /* justify-content: center; */
+    }
+    .barber-link ul li a {
+      font-size: 4.5vw;
+    }
+  }
   .barber-img {
     img {
       width: 450px;
       border-radius: 18px;
     }
+  }
+  @media (max-width: 1070px) {
+    .barber-img {
+      display: flex;
+      justify-content: center;
+      /* order: 1; */
+      margin-bottom: 5vw;
+      position: relative;
+    }
+    .barber-img img {
+      width: 100%;
+      /* border-radius: 3vw; */
+      border-radius: 0;
+    }
+  }
+  .barber-content-show-mobile {
+    display: none;
   }
   .barber-content {
     width: 420px;
@@ -683,6 +716,69 @@ body {
         font-weight: bold;
       }
     }
+  }
+  @media (max-width: 1070px) {
+    .barber-content {
+      display: none;
+    }
+    .barber-content-show-mobile {
+      /* width: 100%; */
+      width: fit-content;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+      /* justify-content: center; */
+      position: absolute;
+      top: 0;
+      left: 5%;
+
+      .barber-text,
+      .barber-title,
+      .barber-name {
+        width: 65%;
+      }
+      .barber-text {
+        transform: translateY(25%);
+        p {
+          font-size: 4.5vw;
+          font-weight: bold;
+          word-wrap: normal;
+        }
+      }
+      .barber-title {
+        margin-bottom: 2%;
+        p {
+          font-size: 4.5vw;
+          font-weight: bold;
+        }
+      }
+      .barber-name {
+        /* margin-bottom: 30px; */
+        margin-bottom: 2%;
+        p {
+          font-size: 5.2vw;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1070px) {
+  .barber {
+    min-height: 0;
+    align-items: stretch;
+    justify-content: unset;
+  }
+}
+@media (max-width: 1070px) {
+  .barber-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10% 0;
+    gap: 0;
   }
 }
 
