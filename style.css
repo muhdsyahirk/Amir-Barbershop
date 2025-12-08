@@ -208,26 +208,32 @@ body {
   justify-content: space-between;
 }
 .home-in-img video {
+  width: 330px;
   box-shadow: var(--white) -28px 28px 0px -2px, var(--dark-blue) -28px 28px;
+}
+.home-in-img img {
+  display: none;
 }
 .home-in-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 350px;
+  width: 420px;
 }
-/* .home-in-content img {
+.home-in-content img {
   filter: drop-shadow(1px 1px 0px var(--black))
     drop-shadow(-1px 1px 0 var(--black)) drop-shadow(-1px -1px 0 var(--black));
-} */
+  width: 420px;
+}
 
-.home-in-content-1 {
+/* .home-in-content-1 {
   p {
     text-align: center;
     font-size: 45px;
     font-weight: bolder;
   }
-}
+} */
 .home-in-content-2 {
   display: flex;
   gap: 20px;
@@ -243,6 +249,7 @@ body {
   font-size: 22px;
   font-weight: bold;
   letter-spacing: 0.5px;
+  word-wrap: normal;
 }
 .home-in-content-empty {
   height: 50px;
@@ -262,6 +269,76 @@ body {
 .home-in-content-3 p:nth-child(2) {
   font-size: 21px;
   line-height: 29px;
+}
+@media (max-width: 900px) {
+  .home-in-img video {
+    box-shadow: none;
+  }
+}
+@media (max-width: 845px) {
+  .home {
+    align-items: unset;
+    justify-content: unset;
+  }
+  .home-in {
+    flex-direction: column;
+    margin: 15% 5%;
+    width: 100%;
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+  }
+  .home-in-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  }
+  .home-in-img video {
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .home-in-img img {
+    display: block;
+    width: 65%;
+    position: absolute;
+    top: 3%;
+    filter: drop-shadow(1px 1px 0px var(--black))
+      drop-shadow(-1px 1px 0 var(--black)) drop-shadow(-1px -1px 0 var(--black));
+  }
+  .home-in-content {
+    height: fit-content;
+    width: 80%;
+    justify-content: space-between;
+    img {
+      /* width: 100%; */
+      display: none;
+    }
+  }
+  .home-in-content-2-1,
+  .home-in-content-empty {
+    display: none;
+  }
+  .home-in-content-2 {
+    gap: 0;
+    /* width: 70vw; */
+  }
+  .home-in-content-2-2 {
+    font-size: 5vw;
+    text-align: center;
+    margin-bottom: 2.1%;
+  }
+  .home-in-content-3 {
+    padding: 1%;
+  }
+  .home-in-content-3 p:nth-child(1) {
+    font-size: 5vw;
+    padding-bottom: 2%;
+    font-weight: bold;
+  }
+  .home-in-content-3 p:nth-child(2) {
+    font-size: 4vw;
+    line-height: unset;
+  }
 }
 
 /* ---------- PRICING ---------- */
