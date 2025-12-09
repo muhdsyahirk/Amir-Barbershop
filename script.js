@@ -52,6 +52,7 @@ if (window.innerWidth < linkWidth) {
   });
 }
 
+// Scroll -> Border
 const operatingHours = document.querySelector(".home-in-content-3");
 
 const observerOperatingHours = new IntersectionObserver(
@@ -65,3 +66,22 @@ const observerOperatingHours = new IntersectionObserver(
   }
 );
 observerOperatingHours.observe(operatingHours);
+
+// Scroll -> Title
+// const titles = document.querySelectorAll(".titles");
+
+// const observerTitle = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       entry.target.classList.toggle("titles-show", entry.isIntersecting);
+//       // if (entry.isIntersecting) observerTitle.unobserve(entry.target);
+//     });
+//   },
+//   {
+//     threshold: 1,
+//   }
+// );
+
+// titles.forEach((x) => {
+//   observerTitle.observe(x);
+// });
