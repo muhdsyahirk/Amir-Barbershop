@@ -87,7 +87,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 62px;
   z-index: 1818;
   transition: background-color 0.5s;
 }
@@ -172,6 +172,9 @@ body {
   }
 }
 @media (max-width: 500px) {
+  .nav .nav-menu-ul {
+    /* margin-top: 25px; */
+  }
   .nav .nav-sidebar {
     width: 100%;
   }
@@ -317,6 +320,7 @@ body {
     justify-content: center;
     width: 100%;
     /* position: relative; */
+    order: 2;
   }
   .home-in-img video {
     width: 80%;
@@ -351,7 +355,7 @@ body {
   .home-in-content-2-2 {
     font-size: 5vw;
     text-align: center;
-    margin-bottom: 2.1%;
+    /* margin-bottom: 2.1%; */
   }
   .home-in-content-3 {
     padding: 1%;
@@ -545,6 +549,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
   .pricing-in-table {
     font-size: 3.5vw;
@@ -617,6 +623,9 @@ body {
   .location-in-title {
     font-size: 5vw;
     font-weight: bold;
+  }
+  .location-in-title .title-highlight {
+    padding: 0;
   }
   .location-in-address {
     text-align: center;
@@ -711,6 +720,7 @@ body {
     }
   }
   .barber-img {
+    position: relative;
     img {
       width: 450px;
       border-radius: 18px;
@@ -722,7 +732,7 @@ body {
       justify-content: center;
       /* order: 1; */
       /* margin-bottom: 5vw; */
-      position: relative;
+      /* position: relative; */
     }
     .barber-img img {
       width: 100%;
@@ -759,6 +769,14 @@ body {
         font-weight: bold;
       }
     }
+  }
+  .barber-content-img-gradient {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(transparent 70%, var(--black));
+    top: 0;
+    left: 0;
   }
   @media (max-width: 1070px) {
     .barber-content {
@@ -943,11 +961,12 @@ footer {
       flex-direction: column;
       justify-content: unset;
       align-items: center;
-      padding: 2.1vw 0 4.2vw 0;
+      padding: 2.1vw 0 10.2vw 0; /* bot - 4.2 */
 
       p {
         text-align: center;
         font-size: 1.98vw;
+        line-height: 4vw;
       }
     }
   }
