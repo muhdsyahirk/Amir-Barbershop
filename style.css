@@ -20,7 +20,8 @@ html {
   /* max-width: 1000px; */
 }
 body {
-  background-image: repeating-linear-gradient(
+  /* background-image:
+    repeating-linear-gradient(
       175deg,
       rgb(255, 255, 255) 0px,
       rgb(255, 255, 255) 31px,
@@ -48,7 +49,11 @@ body {
       transparent 31px,
       transparent 35px
     ),
-    linear-gradient(90deg, var(--dark-blue), var(--dark-blue));
+    linear-gradient(90deg, var(--dark-blue), var(--dark-blue)); */
+  background-color: var(--black);
+}
+section {
+  background-color: var(--white);
 }
 .title-highlight {
   padding-left: 10px;
@@ -63,7 +68,7 @@ body {
   );
 }
 .text-highlight {
-  font-style: italic;
+  /* font-style: italic; */
   color: var(--dark-blue);
 }
 .title-highlight-inverted {
@@ -81,7 +86,115 @@ body {
 }
 
 /* ---------- NAV ---------- */
-.nav {
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1818;
+  display: flex;
+  justify-content: center;
+
+  .nav-container {
+    width: clamp(700px, 55vw, 1292px);
+    margin-top: 10px;
+
+    padding: 5px 20px 5px 20px;
+    border: 0.2px solid var(--grey);
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.83);
+    backdrop-filter: blur(2.3px);
+    -webkit-backdrop-filter: blur(2.3px);
+
+    display: flex;
+    align-items: center;
+
+    .nav-img {
+      margin-right: auto;
+      img {
+        width: 30px;
+        border-radius: 50%;
+      }
+    }
+
+    .nav-burger {
+      display: none;
+      color: var(--white);
+    }
+
+    .nav-item {
+      display: flex;
+      list-style: none;
+      gap: 12px;
+
+      li {
+        a {
+          text-decoration: none;
+          color: var(--white);
+          letter-spacing: 1px;
+          font-weight: bold;
+          transition: color 0.3s;
+
+          &:hover {
+            color: var(--red);
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    .nav-container {
+      width: 70%;
+    }
+  }
+  @media (max-width: 700px) {
+    .nav-container {
+      position: relative;
+
+      .nav-burger {
+        display: block;
+      }
+
+      .nav-item {
+        position: fixed;
+        z-index: 1818;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        top: 120%;
+        left: 0;
+        border: 0.2px solid var(--grey);
+        border-radius: 15px;
+        background: rgba(0, 0, 0, 0.83);
+        backdrop-filter: blur(2.3px);
+        -webkit-backdrop-filter: blur(2.3px);
+        transform: translateY(-125%);
+        opacity: 0;
+        transition:
+          transform 0.5s,
+          opacity 0.5s;
+
+        li {
+          display: flex;
+          border-bottom: 1px solid var(--grey);
+
+          &:last-child {
+            border-bottom: 0;
+          }
+
+          a {
+            padding: 25px 20px 25px 20px;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+      .nav-item-mobile {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+/* .nav {
   position: fixed;
   width: 100%;
   display: flex;
@@ -107,8 +220,8 @@ body {
   margin-right: auto;
   img {
     width: 50px;
-    /* filter: drop-shadow(1px 1px 0px var(--black))
-      drop-shadow(-1px 1px 0 var(--black)) drop-shadow(-1px -1px 0 var(--black)); */
+    filter: drop-shadow(1px 1px 0px var(--black))
+      drop-shadow(-1px 1px 0 var(--black)) drop-shadow(-1px -1px 0 var(--black));
     border: 2px solid var(--black);
     border-radius: 100%;
   }
@@ -144,7 +257,7 @@ body {
   gap: 0;
 }
 .nav .nav-sidebar li {
-  /* padding: 18px; */
+  padding: 18px;
 }
 .nav .nav-sidebar li:first-child {
   padding-top: 58px;
@@ -173,12 +286,12 @@ body {
 }
 @media (max-width: 500px) {
   .nav .nav-menu-ul {
-    /* margin-top: 25px; */
+    margin-top: 25px;
   }
   .nav .nav-sidebar {
     width: 100%;
   }
-}
+} */
 
 /* ---------- HOME ---------- */
 .home {
@@ -187,7 +300,8 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--white);
-  background-image: repeating-linear-gradient(
+  background-image:
+    repeating-linear-gradient(
       0deg,
       transparent,
       transparent 20px,
@@ -226,7 +340,9 @@ body {
 }
 .home-in-img video {
   width: 330px;
-  box-shadow: var(--white) -28px 28px 0px -2px, var(--dark-blue) -28px 28px;
+  box-shadow:
+    var(--white) -28px 28px 0px -2px,
+    var(--dark-blue) -28px 28px;
 }
 .home-in-img img {
   display: none;
@@ -417,13 +533,16 @@ body {
   margin-top: 40px;
   padding: 10px 20px;
   border: 2.2px solid var(--dark-blue);
-  box-shadow: var(--white) 28px -28px 0px -2px, var(--dark-blue) 28px -28px;
+  box-shadow:
+    var(--white) 28px -28px 0px -2px,
+    var(--dark-blue) 28px -28px;
   /* background-color: var(--dark-blue); */
   /* border: 2px solid var(--dark-blue); */
   background-color: #ffffff;
   background-color: #ffffff;
   opacity: 1;
-  background-image: linear-gradient(
+  /* background-image:
+    linear-gradient(
       30deg,
       #e8e8e8 12%,
       transparent 12.5%,
@@ -472,8 +591,14 @@ body {
       #e8e8e877
     );
   background-size: 34px 60px;
-  background-position: 0 0, 0 0, 17px 30px, 17px 30px, 0 0, 17px 30px;
-  background-attachment: fixed;
+  background-position:
+    0 0,
+    0 0,
+    17px 30px,
+    17px 30px,
+    0 0,
+    17px 30px;
+  background-attachment: fixed; */
 }
 .pricing-in-table {
   border-collapse: collapse;
@@ -544,12 +669,13 @@ body {
     box-shadow: none;
     padding: 0;
     display: flex;
-    background-image: url(./img/barber-art.png);
+    /* background-image: url(./img/barber-art.png);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     width: 80%;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    box-shadow:
+      rgba(0, 0, 0, 0.3) 0px 19px 38px,
       rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
   .pricing-in-table {
@@ -611,7 +737,8 @@ body {
 .location-in-map iframe {
   min-width: 680px;
   min-height: 240px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+  box-shadow:
+    rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 @media (max-width: 780px) {
@@ -654,7 +781,7 @@ body {
 /* ---------- BARBER ---------- */
 .barber {
   min-height: 100vh;
-  background-color: #000000;
+  background-color: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
