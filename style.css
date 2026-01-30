@@ -318,7 +318,7 @@ nav {
       ),
       url(./img/bg.jpeg); */
     background-image: url(./img/bg.jpeg);
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-size: cover;
     background-position: center;
   }
