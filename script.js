@@ -1,96 +1,9 @@
-// Scroll -> Background Nav
-// const navBar = document.querySelector(".nav");
-// const navMenu = document.querySelectorAll(".nav-menu-elem");
-
-// window.addEventListener("scroll", () => {
-//   if (window.scrollY >= 40) {
-//     navBar.classList.add("nav-scrolled");
-//     navMenu.forEach((x) => {
-//       x.classList.add("nav-menu-scrolled");
-//     });
-//   } else {
-//     navBar.classList.remove("nav-scrolled");
-//     navMenu.forEach((x) => {
-//       x.classList.remove("nav-menu-scrolled");
-//     });
-//   }
-// });
-
-// Responsive Sidebar
-// function showSidebar() {
-//   const navSidebar = document.querySelector(".nav-sidebar");
-//   navSidebar.style.display = "flex";
-// }
-// function hideSidebar() {
-//   const navSidebar = document.querySelector(".nav-sidebar");
-//   navSidebar.style.display = "none";
-// }
-
-// Scroll -> Reveal Sosmed
-// const linkWidth = 630;
-
-// if (window.innerWidth < linkWidth) {
-//   const linkTexts = document.querySelectorAll(".barber-link-show-630px");
-
-//   const observerLink = new IntersectionObserver(
-//     (entries) => {
-//       entries.forEach((entry) => {
-//         entry.target.classList.toggle(
-//           "barber-link-transition",
-//           entry.isIntersecting
-//         );
-//         // if (entry.isIntersecting) observerLink.unobserve(entry.target);
-//       });
-//     },
-//     {
-//       threshold: 1,
-//     }
-//   );
-
-//   linkTexts.forEach((x) => {
-//     observerLink.observe(x);
-//   });
-// }
-
-// Scroll -> Border
-// const operatingHours = document.querySelector(".home-in-content-3");
-
-// const observerOperatingHours = new IntersectionObserver(
-//   (entry) => {
-//     entry.forEach((x) => {
-//       x.target.classList.toggle("operating-hours-transition", x.isIntersecting);
-//     });
-//   },
-//   {
-//     threshold: 1,
-//   }
-// );
-// observerOperatingHours.observe(operatingHours);
-
-// Scroll -> Title
-// const titles = document.querySelectorAll(".titles");
-
-// const observerTitle = new IntersectionObserver(
-//   (entries) => {
-//     entries.forEach((entry) => {
-//       entry.target.classList.toggle("titles-show", entry.isIntersecting);
-//       // if (entry.isIntersecting) observerTitle.unobserve(entry.target);
-//     });
-//   },
-//   {
-//     threshold: 1,
-//   }
-// );
-
-// titles.forEach((x) => {
-//   observerTitle.observe(x);
-// });
-
 // LOADING
 const loader = document.getElementById("loader");
 window.addEventListener("load", () => {
   setTimeout(() => {
     loader.classList.add("loader-hidden");
+    scrollInitialiser();
 
     setTimeout(() => {
       loader.style.display = "none";
@@ -182,3 +95,44 @@ function addAnimation() {
     }
   });
 }
+
+// SCROLL ANIMATION
+function scrollInitialiser() {
+  const scrollElements = document.querySelectorAll("[data-scroll-class]");
+
+  const scrollObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const className = entry.target.dataset.scrollClass;
+          entry.target.classList.add(className);
+          scrollObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  scrollElements.forEach((el) => scrollObserver.observe(el));
+}
+
+// TYPING ANIMATION
+// const text =
+//   "Your underrated kedai gunting rambut. Clean cuts, fresh fades, affordable prices. Walk in or book via call or WhatsApp.";
+// const element = document.getElementById("typewriter-text");
+// let index = 0;
+
+// function typeWriter() {
+//   if (index < text.length) {
+//     element.textContent += text.charAt(index);
+//     index++;
+//     setTimeout(typeWriter, 50);
+//   } else {
+//     setTimeout(() => {
+//       element.style.setProperty("--cursor", "none");
+//     }, 1000);
+//   }
+// }
+// window.addEventListener("load", () => {
+//   setTimeout(typeWriter, 500);
+// });

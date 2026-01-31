@@ -190,6 +190,9 @@ nav {
         max-width: 400px;
         height: auto;
         border-radius: clamp(8px, 2vw, 14px);
+        box-shadow:
+          rgba(0, 0, 0, 0.3) 0px 19px 38px,
+          rgba(0, 0, 0, 0.22) 0px 15px 12px;
       }
     }
     .home-in-quote {
@@ -204,7 +207,15 @@ nav {
         line-height: 1.3;
         margin: 0;
         font-weight: 600;
+        transition: text-shadow 1s;
       }
+      .scroll-shadow {
+        text-shadow: 2px 2px var(--white);
+      }
+      /* h1::after {
+        content: "|";
+        animation: blink 0.75s step-end infinite;
+      } */
     }
     .home-in-op {
       width: 70%;
@@ -216,7 +227,6 @@ nav {
       border-radius: clamp(8px, 1.5vw, 12px);
       box-shadow: 0 0 10px rgba(155, 198, 240, 0.5);
       border: 1.5px solid var(--black);
-
       animation: glow 1s ease-in-out infinite alternate;
 
       p {
@@ -256,6 +266,11 @@ nav {
     box-shadow: 0 0 15px rgba(155, 198, 240, 0.6);
   }
 }
+/* @keyframes blink {
+  50% {
+    opacity: 0;
+  }
+} */
 
 /* ---------- PRICING ---------- */
 .pricing {
@@ -309,6 +324,9 @@ nav {
   /* background-color: var(--dark-blue); */
   /* border: 2px solid var(--dark-blue); */
   background-color: #ffffff;
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 1s;
 }
 .pricing-in-table {
   border-collapse: collapse;
@@ -439,6 +457,11 @@ nav {
   font-size: 17.5px;
   letter-spacing: 0.5px;
   color: #5e5e5e;
+}
+.location-in-map {
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 1s;
 }
 .location-in-map iframe {
   min-width: 680px;
@@ -963,4 +986,11 @@ footer {
       50% 50%,
       100% 100%;
   }
+}
+/*  */
+/*  */
+/*  */
+.scroll-simple {
+  opacity: 1;
+  transform: translateY(0%);
 }
